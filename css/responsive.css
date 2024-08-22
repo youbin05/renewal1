@@ -1,0 +1,282 @@
+@media screen and(max-width:773px){
+    html,body{
+        max-width: 460px;
+    }
+    /* common */
+    .wrap{
+       max-width: 400px;
+       height: auto;
+    }
+    .h2{
+        font-size: calc(50px *0.7);
+    }
+    .h5 {
+        font-size: calc(35px *0.7);
+    }
+    .padding{
+        padding: 0;
+    }
+    /* header */
+    header{
+        max-width: 100%;
+    }
+    header div.hed{
+        width: 100%;
+        height: 70px;
+        padding: 0 10px;
+        gap: 0;
+    }
+    header div.hed h1{
+
+    }
+    header div.hed ul.gnb{
+        display: none;
+    }
+    header div.quik{
+        display: none;
+    }
+    /* title */
+    #title{
+        width: 100%;
+        height: auto;
+        margin: 50px auto;
+        padding: 0;
+    }
+    #title div.Title{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        align-items: first baseline;
+    }
+    #title h2.titleH{
+        font-size: calc(40px *0.7);
+        margin: 20px auto;
+    }
+    #title p.titleP{
+        font-size: calc(25px *0.7);
+        margin: 20px auto;
+    }
+    #title div.Title div > div > div{
+        box-shadow: inherit;
+        border-radius: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    #title div.B h2{
+        font-size: calc(27px *0.7);
+    }
+    #title div ul{
+        width: 400px;
+        height: 100%;
+        margin: 0 auto;
+        position: static;
+        border-radius: 0;
+        padding: 45px 13px;
+        box-sizing: border-box;
+    }
+    #title div ul li{
+
+    }
+    #title div ul li h2{
+        font-size: calc(35px *0.7);
+    }
+    #title div ul li p{
+        width: 100% !important;
+        font-size: calc(20px *0.7);
+    }
+    #title div ul li a{
+        margin-top: auto;
+    }
+    /* title slick */
+    #title div.Title > div.draggable{
+        width: 100%;
+    }
+    #title div.Title div.wbutton{
+        display: none;
+    }
+    /* main */
+    main{
+        width: 100%;
+        height: auto;
+    }
+    /* latest */
+    main #Latest{
+        width: 100%;
+        height: 1200px;
+    }
+    main #Latest div.wrap{
+        width: 100% !important;
+        height: 100%;
+        flex-direction: column;
+        padding: 0;
+    }
+    main #Latest div.wrap h2{
+        width: auto;
+    }
+    main #Latest div.wrap p{
+        width: auto;
+        font-size: calc(50px*0.4);
+        margin-bottom: 30px;
+    }
+    main #Latest div.wrap div{
+        width: 100%;
+        height: auto;
+    }
+    main #Latest div.wrap ul.new{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 1000px;
+    }
+    main #Latest div.wrap ul.new li{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 30px;
+    }
+    main #Latest div.wrap ul.new li a{
+        width: 100%;
+        height: 100%;
+    }
+    main #Latest div.wrap ul.new li a::before{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+    main #Latest div.wrap ul.new li a h3{
+        font-size: calc(40px*0.4)
+    }
+    /* popular */
+    main #popular{
+      width: 100%;
+      height: 700px;
+    }
+    main #popular div.wrap{
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    main #popular div.wrap h2{
+        width: 100%;
+    }
+    main #popular div.wrap p{
+        width: 100%;
+        font-size: calc(50px*0.4);
+    }
+    main #popular div.wrap div.slick{
+        width: 100%;
+        height: 400px;
+    }
+    /* serial */
+    #serial{
+        width: 100%;
+        height: auto;
+    }
+    #serial div.wrap{
+        width: 100%;
+        height: auto;
+        gap: 25px;
+        margin: 0 auto;
+    }
+    #serial div.wrap h2{
+
+    }
+    #serial div.wrap p{
+        font-size: calc(35px *0.4);
+    }
+    /* serial slick */
+    #serial div.wrap div.list{
+        width: 460px;
+        margin-left: -30px;
+    }
+    #serial div.wrap div.draggable{
+        width: 100%;
+    }
+    #serial div.wrap div.list ul.sec{
+
+    }
+    #serial div.wrap div.list ul.sec li{
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+    #serial div.wrap div.list ul.sec li a{
+        width: 100%;
+        height: 100%;
+    }
+    #serial div.wrap div.list ul.sec li a::before{
+        width: 100%;
+        height: 150px;
+    }
+    /* youtube */
+    #youtube{
+        width: 460px;
+        height: 850px;
+    }
+    #youtube div.wrap{
+        width: 100%;
+        height: auto;
+        display: flex !important;
+        flex-direction: column;
+    }
+    /* youtube 영상설정 */
+    #youtube div.wrap div.wcf{
+        width: 400px !important;
+        height: 225px !important;
+    }
+    #youtube div.wrap ul.list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 470px;
+    }
+    #youtube div.wrap ul.list li{
+
+    }
+    #youtube div.wrap ul.list li.a{
+
+    }
+    #youtube div.wrap ul.list li.b{
+
+    }
+    #youtube div.wrap ul.list li.c{
+
+    }
+    /* ul.moa */
+    #youtube div.wrap ul.list > ul.moa li a{
+        background-size: contain;
+        background-position-x: 270px;
+    }
+    /* footer */
+    footer{
+        width: 100%;
+        height: 100%;
+    }
+    footer div.fot{
+        width: 100%;
+        height: 100%;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        gap: 10px;
+        padding: 0;
+    }
+    footer div.fot a.logo{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    footer div.fot ul.menu{
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        font-size: 15px;
+    }
+    footer div.fot ul.snsmenu{
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: right;
+    }
+    footer div.fot div.info{
+        width: fit-content;
+        gap: 10px;
+        font-size: 13px;
+    }
+}

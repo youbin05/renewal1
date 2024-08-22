@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성디스플레이 뉴스룸</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normaliz.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- js -->
+    <script src="js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 유튜브 영상 배경 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.4/css/jquery.mb.YTPlayer.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.4/jquery.mb.YTPlayer.min.js"></script>
+    <script>
+        jQuery( function() {
+         jQuery( '#background' ).YTPlayer();
+         jQuery( '#cf' ).YTPlayer();
+        });
+    </script>
+    <!-- 유튜브 영상 배경 CSS -->
+     <style>
+        #background {
+            z-index: 2;
+            /* position: absolute; */
+        }
+        #wrapper_background{
+            position: absolute !important;
+        }
+        #wrapper_cf{
+            position: relative !important;
+            opacity: 1 !important;
+            min-width: 50% !important;
+            min-height: 100% !important;
+            margin: 0 auto !important;
+            border-radius: 30px;
+        }
+        /* #contact div.wrap{
+            position: static !important;
+            padding-bottom: 0 !important;
+        }
+        */
+        #youtube div.wrap div.wcf{
+            width: 850px;
+            height: 478px;
+            margin: 0 auto;
+        }
+        iframe{
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+        }
+     </style>
+    <!-- slick -->
+    <script>
+        $(document).ready(function(){
+            $('.titleAni').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true ,
+                autoplaySpeed: 2000,
+                dots: false,
+                infinite: true,
+                speed: 900,
+                cssEase: 'ease-in',
+                arrows:true,
+                fade:false,
+                centerMode:true,
+                variableWidth: true,
+                dotsClass:'slick-dots'
+            });
+        });
+        $(document).ready(function(){
+            $('.articleAni').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                dots: true,
+                infinite: false,
+                speed: 1500,
+                cssEase: 'ease-out',
+                arrows:true,
+                fade:false,
+                centerMode: true,
+            });
+            // articleAni 버튼 묶기
+        $("#popular .slick-prev,#popular .slick-next").wrapAll('<div class="popbutton"></div>');
+
+            // 묶은 버튼 div.left 집어넣기
+            $("main #popular div.wrap ul.pop div.popbutton").appendTo("main #popular div.wrap div.left");
+        });
+        $(document).ready(function(){
+            $('.serialani').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 500,
+                dots: true,
+                infinite: true,
+                speed: 1500,
+                cssEase: 'ease-out',
+                arrows:true,
+                variableWidth: true
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+           // 최신기사 영역 버튼 묶기
+            $("main #Latest .slick-prev,main #Latest .slick-next").wrapAll('<div class="yeonB"></div>');
+
+            //quik menu 
+        });
+    </script>
+    <script>
+        //title hover시 ul요소 보이기
+        $(function(){
+            
+            $("#title div ul").hide(); // 모든 ul요소 숨기기
+
+            $("#title div.A").hover( // A
+                function(){ // div에 마우스를 올렸을때 
+                    $("#title div ul.a").stop().fadeIn();
+
+                },
+                function(){ // div에서 마우스가 떠났을때
+                    $("#title div ul.a").stop().fadeOut();
+
+                }
+            )
+
+            $("#title div.B").hover( // B
+                function(){ // div에 마우스를 올렸을때 
+                    $("#title div ul.b").stop().fadeIn();
+
+                },
+                function(){ // div에서 마우스가 떠났을때
+                    $("#title div ul.b").stop().fadeOut();
+
+                }
+            )
+
+            $("#title div.C").hover( // C
+                function(){ // div에 마우스를 올렸을때 
+                    $("#title div ul.c").stop().fadeIn();
+
+                },
+                function(){ // div에서 마우스가 떠났을때
+                    $("#title div ul.c").stop().fadeOut();
+
+                }
+            )
+
+            $("#title div.Title .slick-prev,#title button.btn_pause,#title div.Title .slick-next").wrapAll('<div class="wbutton"></div>'); //title slick 버튼 묶기
+
+            // 정지 재생 버튼
+            var sw = 0;
+            $('.btn_pause').click(function(){
+                if(sw==0){
+                    $('.btn_pause').addClass('on');
+                    $('.titleani').slick('slickPause')
+                    sw = 1;
+                }else{
+                    $('.btn_pause').removeClass('on');
+                    $('.titleani').slick('slickPlay')
+                    sw = 0;
+                }
+            });
+        });
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header>
+        <div class="hed wrap grid">
+            <h1 class="h6">
+                <a href="" class="block">삼성디스플레이 뉴스룸</a>
+            </h1>
+            <ul class="gnb flex bold">
+                <li><a href="" class="block">제품기술</a></li>
+                <li><a href="" class="block">인사이트</a></li>
+                <li><a href="" class="block">ESG</a></li>
+                <li><a href="" class="block">기업</a></li>
+                <li><a href="" class="block">프레스센터</a></li>
+            </ul>
+            <span class="but flex">
+                <button class="subs">
+                    subscribe button
+                </button>
+                <button class="src">
+                    search button
+                </button>
+                <button class="hem">
+                    hem button
+                </button>
+            </span>
+            <div class="quik">
+                <h2></h2>
+                <a href="#" class="block">유튜브</a>
+                <a href="#" class="block">기사보러가기</a>
+                <a href="#" class="block">삼성디스플레이 뉴스룸 구독</a>
+            </div>
+        </div>
+    </header>
+    <!-- 타이틀 영역 -->
+    <section id="title">
+        <h2 class="titleH bold" data-aos="fade-up" data-aos-duration="2000">SamsungDisplay Newsroom</h2>
+        <p class="titleP" data-aos="fade-up" data-aos-duration="2500">삼성디스플레이의 최신 뉴스와 업데이트를 만나보세요</p>
+        <div class="Title titleAni" data-aos="fade-up" data-aos-duration="3000">
+            <div class="A wrap" data-aos="fade-up" data-aos-duration="3000">
+                <ul class="a">
+                    <li>
+                        <h2 class="h2 bold">
+                            롯데월드몰 갤럭시 스튜디오에 가면 <br>
+                            '이것'을 만날 수 있다!
+                        </h2>
+                        <p class="h6">
+                            잠실 롯대월드몰 갤럭시 스튜디오에 갤럭시 신제품들 등장! <br>
+                            충격이나 스크래치에도 강하고, 방수 기능까지 탁월한 <br>
+                            한층 더 업그레이드된 폴더블 OLED를 영상으로 함께 만나보세요 ! 
+                        </p>
+                        <a href="" class="block">View more</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="B wrap" data-aos="fade-up" data-aos-duration="3000">
+                <ul class="b">
+                    <li>
+                        <h2 class="h2 bold">진화된 폴더블 디스플레이와 첨단 AI의 만남! <br>
+                            삼성 갤럭시 Z플립6 · 폴드6 언팩 2024
+                        </h2>
+                        <p class="h6">
+                            7월 10일, 프랑스 파리에서 열린 ‘삼성 갤럭시 언팩 2024 행사에서 <br>
+                            ‘갤럭시 Z 폴드6’와 ‘갤럭시 Z 플립6’ 등 신제품이 공개됐습니다.
+                        </p>
+                        <a href="" class="block">View more</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="C wrap" data-aos="fade-up" data-aos-duration="3000">
+                <ul class="c">
+                    <li>
+                        <h2 class="h2 bold">
+                            삼성D 혁신 제품, 크래프톤 신작<br> 
+                            '인조이'에서 만난다
+                        </h2>
+                        <p class="h6">
+                            삼성디스플레이는 크래프톤의 신작 시뮬레이션 게임 '인조이'에 두 번 접는<br> 
+                            멀치 폴더블 제품을 비롯해 13종의 혁신 제품이 등장한다고 29일 밝혔다.
+                        </p>
+                        <a href="" class="block">View more</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn_pause"></button>
+    </section>
+    <!-- 메인영역 -->
+    <main>
+        <section id="Latest">
+            <div class="wrap padding flex">
+                <h2 class="h2 bold" data-aos="fade-up" data-aos-duration="1500">최신기사</h2>
+                <p class="h5" data-aos="fade-up" data-aos-duration="2000">삼성디스플레이 뉴스룸을 구독하고 최신 소식과 다양한 정보를 받아보세요!</p>
+                <div>
+                    <ul class="new" data-aos="fade-left" data-aos-duration="2000">
+                        <li>
+                            <a href="" class="block">
+                                <h3 class="h5 bold">삼성D 노트북 모니터 패널 , 업계 최초 '팬톤 인증' 획득</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="block">
+                                <h3 class="h5 bold">[디스플레이 용어.zip] EP.10:DCI-P3 (디지털영사기용 색 영역)</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="block">
+                                <h3 class="h5 bold">삼성 OLED, QD_OLED를 탑재한 2024년 상반기 출시 주요 IT 제품들</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="block">
+                                <h3 class="h5 bold">[한눈에 보는 디스플레이] Vol.1 픽셀과 해상도</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="popular">
+            <div class="wrap flex">
+                <div class="left">
+                    <h2 class="h2 bold" data-aos="fade-up" data-aos-duration="1500">인기기사</h2>
+                    <p class="h5" data-aos="fade-up" data-aos-duration="2000">
+                        삼성디스플레이 뉴스룸을 구독하고<br>
+                        최신 소식과 다양한 정보를 받아보세요!</p>
+                </div>
+                <div class="right">
+                    <ul class="pop articleAni">
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                생각만으로 체스를 둘 수 있다?<br>
+                                뇌로 움직이는 세상 BCI 기술
+                            </p>
+                        </li>
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                [디스플레이 용어.zip] EP.04 : 휘도 (Luminance)
+                            </p>
+                        </li>
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                삼성디스플레이 , 美 'SID 2024'에서 OLED의 미래 제시
+                            </p>
+                        </li>
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                'SID 2024'에서 만나는 디스플레이의 미래<br>
+                                삼성디스플레이가 제시하는 혁신적인 미래 기술
+                            </p>
+                        </li>
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                진화된 폴더블 디스플레이와 첨단 AI의 만남<br>
+                                삼성 갤럭시 Z 폴드6·플립6 언팩 2024
+                            </p>
+                        </li>
+                        <li>
+                            <a href="" class="block"></a>
+                            <p class="h5 bold">
+                                삼성D 차세대 기술 논문 4편, SID '올해의 우수논문'으로 선정
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="serial">
+            <div class="wrap padding">
+                <h2 class="h2 bold">연재기사</h2>
+                <p class="h6">삼성디스플레이만의 다양한 이야기를 시리즈로 보실 수 있습니다.</p>
+                <div class="list flex">
+                    <div class="ani">
+                        <ul class="sec serialani">
+                            <li><a href="" class="block a1">디스플레이용어.zip</a></li>
+                            <li><a href="" class="block a2">Replay the Display</a></li>
+                            <li><a href="" class="block a3">우리 애가 떴어요!</a></li>
+                            <li><a href="" class="block a4">한번에 이해가능한 SDC 지식재산권</a></li>
+                            <li><a href="" class="block a5">산거파일 D텍티브</a></li>
+                            <li><a href="" class="block a6">오늘 이 전시 어때</a></li>
+                            <li><a href="" class="block a7">미술관에 간 과학자</a></li>
+                            <li><a href="" class="block a8">요리조리 기술맛집</a></li>
+                            <li><a href="" class="block a9">어쩌다 통근버스</a></li>
+                            <li><a href="" class="block a10">SDC 톡파원</a></li>
+                            <li><a href="" class="block a11">D Shorts</a></li>
+                            <li><a href="" class="block a12">직장인 브이로그</a></li>
+                            <li><a href="" class="block a13">디스플레이 용어알기</a></li>
+                            <li><a href="" class="block a14">디스플레이 톺아보기</a></li>
+                            <li><a href="" class="block a15">YESG구</a></li>
+                            <li><a href="" class="block a16">친절한 D맨</a></li>
+                            <li><a href="" class="block a17">디톡쇼</a></li>
+                            <li><a href="" class="block a18">SDC On The Stage</a></li>
+                            <li><a href="" class="block a19">퀀텀닷 완전 정복</a></li>
+                            <li><a href="" class="block a20">컬러 & 디스플레이</a></li>
+                            <li><a href="" class="block a21">한 컷 일러스트</a></li>
+                            <li><a href="" class="block a22">일상 속 디스플레이의 발견</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="youtube">
+            <div class="wrap padding grid">
+                <h2 class="h2 bold">YouTube 핫클립</h2>
+                <div class="wcf">
+
+                </div>
+                <!-- 유튜브 영상 배경-->
+                <div id="cf" class="player" data-property="{
+                    videoURL: 'https://youtu.be/54HQJjTUO0U',
+                    mute: true,
+                    showControls: false,
+                    useOnMobile: true,
+                    quality: 'highres',
+                    containment: '#youtube .wcf',
+                    loop: true,
+                    autoPlay: true,
+                    stopMovieOnBlur: false,
+                    startAt: 0,
+                    opacity: 1
+                    }">
+                </div>
+                <ul class="flex list">
+                    <li class="a"><a href="" class="block"></a></li>
+                    <li class="b"><a href="" class="block"></a></li>
+                    <li class="c"><a href="" class="block"></a></li>
+                    <ul class="moa">
+                        <li>
+                            <a href="" class="block">
+                                <span class="block">
+                                디스플레이 기술을 알기 쉽게 설명한
+                                </span>
+                                <p>디스플레이 톺아보기</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="block">
+                                <span class="block">
+                                디스플레이를 이해항는 중요한 방법!
+                                </span>
+                                <p>디스플레이 용어알기</p>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- 하단영역 -->
+     <footer>
+        <div class="fot grid">
+            <a href="" class="block logo">
+                <h2>로고이미지</h2>
+            </a>
+            <ul class="menu">
+                <li>
+                    <a href="" class="block">개인정보처리방침</a>
+                    <a href="" class="block">운영정책</a>
+                    <a href="" class="block">뉴스룸구독</a>
+                </li>
+            </ul>
+            <ul class="snsmenu">
+                <li>
+                    <a href="" class="block">삼성디스플레이 홈페이지</a>
+                    <a href="" class="block">페이스북</a>
+                    <a href="" class="block">유튜브</a>
+                    <a href="" class="block">글로벌 뉴스룸</a>
+                </li>
+            </ul>
+            <div class="info">
+                <p>본사 : 17113 경기도 용인시 기흥구 삼성로1</p>
+                <p>대표번호 : 031-5181-1114</p>
+                <p class="Copyright">Copyright © SAMSUNG DISPLAY Co.,Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+     </footer>
+</body>
+</html>
